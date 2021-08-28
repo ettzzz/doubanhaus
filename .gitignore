@@ -1,0 +1,38 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+
+# Spyder project settings
+.spyproject
+
+# Python template
+__pycache__/
+.pylint.d
+
+# sqlite3 db file
+*.db
+
+# Trained networks
+*.pickle
+
+# MacOS temp file
+*.DS_Store
+
+# Image files
+*.png
+*.jpg
+
+# draft txt
+draft.txt
+
+# private infos
+private/
+
+# geckodriver
+geckodriver*
