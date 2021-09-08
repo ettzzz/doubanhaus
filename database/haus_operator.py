@@ -55,7 +55,8 @@ class DoubanhausDatabase(sqliteBaseOperator):
         clean_posts = []
         fill = []
         for each_post in posts:
-        # post_pool = get_filter_pool()
+        # post_pool = get_filter_pool() 
+        # TODO: this func will be completed as a loose end after cookie scraper
             post_uid = each_post.select('td > a')[0]['href'].split('/')[-2]
             user_uid = each_post.select('td > a')[1]['href'].split('/')[-2]
             date = each_post.select('td.time')[0].get_text().split(' ')[0]

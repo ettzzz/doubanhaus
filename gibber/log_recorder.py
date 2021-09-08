@@ -42,36 +42,3 @@ def get_logger(debug=DEBUG):
     return logger
 
 
-'''
-import traceback
-# format_exc()
-
-from gibber import gabber
-
-
-def func1():
-    gabber.info('this is function 1')
-
-
-def func2():
-    gabber.error('this is an error')
-
-
-def func3():
-    for i in range(3):
-        gabber.debug('func3 debug')
-
-
-def func4():
-    for i in range(3):
-        if i > 1:
-            gabber.critical('func4 critical')
-        else:
-            gabber.warning('func4 normal')
-
-
-func1()
-func2()
-func3()
-func4()
-'''

@@ -7,12 +7,9 @@ Created on Sat Aug 28 10:06:00 2021
 
 import time
 import re
-from urllib.parse import quote, unquote
+from urllib.parse import unquote
 
 from bs4 import BeautifulSoup
-# from selenium.webdriver.support.wait import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
-# from selenium.webdriver.common.by import By
 
 from utils.data_tools import random_tose, post_filter_pipeline
 from config.static_vars import headers
@@ -23,23 +20,12 @@ def get_group_urls(session, keyword, page_limit = 3):
     base_url = 'https://www.douban.com/search'
     params = {
         'cat': 1019,
-        # 'q':quote(keyword),
         'q': keyword,
         'start': 0
         }
     
-    # base_url = 'https://www.douban.com/search?cat=1019&q={}'.format()
     gonna_hit = []
     for i in range(page_limit):
-        # url = base_url + '&start={}'.format((i + 1)* 20)
-        # browser.get(url)
-        # WebDriverWait(browser, 15).until(
-        #     EC.presence_of_element_located(
-        #         (By.CSS_SELECTOR, '.result-list-ft')
-        #         )
-        # )
-        # time.sleep(random_tose() + 1)
-        # soup = BeautifulSoup(browser.page_source, 'html.parser')
         r = ss.get(base_url, params=params, headers=headers)
         time.sleep(random_tose() + 1)
         soup = BeautifulSoup(r.text, 'html.parser')
@@ -69,7 +55,6 @@ def get_posts(session, city, group_url):
         time.sleep(random_tose() + 1)
         
         soup = BeautifulSoup(r.text, 'html.parser')
-        # posts = soup.select('table.olt > tbody > tr')[1:]
         posts = soup.select('table.olt > tr')[1:]
         checked += post_filter_pipeline(city, posts)
     ss.close()
