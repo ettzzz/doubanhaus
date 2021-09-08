@@ -22,17 +22,13 @@ __pycache__/
 *.pickle
 
 # MacOS temp file
-*.DS_Store
-
-# Image files
-*.png
-*.jpg
-
-# draft txt
-draft.txt
+.DS_Store
 
 # private infos
 private/
 
 # geckodriver
 geckodriver*
+
+# logs
+*.log
