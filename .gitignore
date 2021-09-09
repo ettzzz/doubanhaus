@@ -25,7 +25,8 @@ __pycache__/
 .DS_Store
 
 # private infos
-private/
+private/private_info.py
+private/cookies.txt
 
 # geckodriver
 geckodriver*

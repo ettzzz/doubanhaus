@@ -12,6 +12,7 @@ import platform
 OS = platform.system()
 OS_VER = platform.version()
 ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+cookies_path = os.path.join(ROOT, 'private', 'cookies.txt')
 
 if 'Debian' in OS_VER:
     DEBUG = False
